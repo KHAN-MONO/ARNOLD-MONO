@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/27216625/README.md)
 # 🎬 monocomplex.ai — Backend Setup Guide
 
 ## Stack
