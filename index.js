@@ -1,41 +1,23 @@
+'use strict';
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
+app.use(cors({ origin: '*' }));
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-  next();
-});
 
-// Health check - super simple, no DB needed
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    service: 'monocomplex.ai API', 
-    timestamp: new Date(),
-    version: '1.0.1'
-  });
+  res.json({ status: 'ok', service: 'monocomplex.ai API', timestamp: new Date() });
 });
 
 app.get('/', (req, res) => {
-  res.json({ message: '🎬 monocomplex.ai API is running!' });
+  res.json({ message: '🎬 monocomplex.ai is running!' });
 });
 
-// Load routes safely
-try {
-  const routes = require('./api/routes');
-  app.use('/api', routes);
-} catch(err) {
-  console.error('Routes load error:', err.message);
-  app.use('/api', (req, res) => {
-    res.status(500).json({ error: 'Routes failed to load', details: err.message });
-  });
-}
+app.use('/api', require('./api/routes'));
 
 app.use((err, req, res, next) => {
-  console.error(err);
   res.status(500).json({ success: false, message: err.message });
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "monocomplex-backend",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "monocomplex.ai — Full backend: auth, payments, video generation, file uploads",
   "main": "index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "engines": {
     "node": ">=18.x"
-  }
+  },
+  "type": "commonjs"
 }
