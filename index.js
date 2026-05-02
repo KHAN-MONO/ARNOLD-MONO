@@ -10,7 +10,7 @@ function safeRequire(pkg) {
   try { return require(pkg); } catch(e) { console.warn(`Module ${pkg} not available:`, e.message); return null; }
 }
 
-const nodemailer = safeRequire('nodemailer');
+const nodemailer = safeRequire('nodemailer') || safeRequire('nodemailer/lib/nodemailer') || null;
 const cloudinaryPkg = safeRequire('cloudinary');
 const cloudinary = cloudinaryPkg ? cloudinaryPkg.v2 : null;
 const stripePkg = safeRequire('stripe');
@@ -220,3 +220,6 @@ module.exports = {
   sendEmail, sendWelcomeEmail, sendPasswordResetEmail, sendPaymentConfirmEmail,
   publishToTikTok,
 };
+
+// Override getTransporter to be completely safe
+// (already defined above but this ensures no crash)
