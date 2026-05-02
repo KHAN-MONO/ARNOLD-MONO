@@ -14,7 +14,7 @@ const {
   generateVideoKling, waitForKlingVideo,
   generateVoiceover, nanoBananaPro, generateScript,
   initFlutterwavePayment, verifyFlutterwavePayment,
-  createStripeCheckout, createStripePortal, stripe,
+  createStripeCheckout, createStripePortal,
   sendWelcomeEmail, sendPasswordResetEmail, sendPaymentConfirmEmail,
   publishToTikTok,
 } = require('../lib');
@@ -527,7 +527,8 @@ router.post('/payments/stripe/checkout', protect, async (req, res) => {
 router.post('/payments/stripe/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
   try {
     const sig = req.headers['stripe-signature'];
-    const event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    const stripeInst = require("stripe")(process.env.STRIPE_SECRET_KEY);
+    const event = stripeInst.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
 
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object;
@@ -745,3 +746,4 @@ router.get('/health', (req, res) =>
 );
 
 module.exports = router;
+
