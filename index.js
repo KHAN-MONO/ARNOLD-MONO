@@ -177,11 +177,12 @@ app.post('/api/admin/apply-whitelist', async (req, res) => {
     const secret = req.headers['x-admin-secret'];
     if (secret !== process.env.ADMIN_SECRET)
       return res.status(401).json({ success: false, message: 'Unauthorized.' });
-    const { Whitelist, User } = require('./models');
+   const Whitelist = mongoose.model('Whitelist');
+const UserModel = mongoose.model('User');
     const entries = await Whitelist.find({});
     let upgraded = 0, notFound = 0;
     for (const entry of entries) {
-      const user = await User.findOne({ email: entry.email });
+      const user = await UserModel.findOne({ email: entry.email });
       if (user) {
         user.plan = entry.plan;
         user.planStatus = 'active';
