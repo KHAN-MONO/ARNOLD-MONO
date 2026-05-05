@@ -95,6 +95,13 @@ app.post('/api/auth/login', async (req, res) => {
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(401).json({ success: false, message: 'Invalid email or password.' });
     const token = signToken(user._id);
+   // Re-check whitelist on every login
+const WhitelistModel = mongoose.model('Whitelist');
+const wl = await WhitelistModel.findOne({ email: email.toLowerCase() });
+if (wl && user.plan !== wl.plan) {
+  user.plan = wl.plan;
+  await user.save();
+}
     res.json({ success: true, token, user: { id: user._id, name: user.name, email: user.email, plan: user.plan } });
   } catch(err) { res.status(500).json({ success: false, message: err.message }); }
 });
