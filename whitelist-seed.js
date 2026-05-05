@@ -10,7 +10,7 @@ const WHITELISTED_EMAILS = [
   { email: 'arnoldmono43@gmail.com',  plan: 'boss', note: 'Founder - Arnold Mono' },
   { email: 'springline56@gmail.com',  plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'summerline056@gmail.com', plan: 'boss', note: 'Free user added by Arnold' },
-  { email: 'autumline56@gmail.com',   plan: 'boss', note: 'Free user added by Arnold' },
+  { email: 'autumnline56@gmail.com',   plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'kimberlyisiki@gmail.com', plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'winterline56@gmail.com',  plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'kimb3rlymono@gmail.com', plan: 'boss', note: 'Free user added by Arnold' },
