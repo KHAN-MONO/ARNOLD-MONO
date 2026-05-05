@@ -179,6 +179,20 @@ app.post('/api/admin/apply-whitelist', async (req, res) => {
       return res.status(401).json({ success: false, message: 'Unauthorized.' });
    const Whitelist = mongoose.model('Whitelist');
 const UserModel = mongoose.model('User');
+   // Seed whitelist if empty
+const existing = await Whitelist.countDocuments({});
+if (existing === 0) {
+  await Whitelist.insertMany([
+    { email: 'arnoldmono43@gmail.com', plan: 'boss' },
+    { email: 'springline56@gmail.com', plan: 'boss' },
+    { email: 'summerline056@gmail.com', plan: 'boss' },
+    { email: 'autumline56@gmail.com', plan: 'boss' },
+    { email: 'kimberlyisiki@gmail.com', plan: 'boss' },
+    { email: 'winterline56@gmail.com', plan: 'boss' },
+    { email: 'kimb3rlymono@gmail.com', plan: 'boss' },
+    { email: 'monocomplex75@gmail.com', plan: 'boss' },
+  ]);
+}
     const entries = await Whitelist.find({});
     let upgraded = 0, notFound = 0;
     for (const entry of entries) {
