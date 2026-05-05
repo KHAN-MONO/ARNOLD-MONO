@@ -191,6 +191,8 @@ app.post('/api/admin/apply-whitelist', async (req, res) => {
     }
     res.json({ success: true, message: `Done! ${upgraded} users upgraded, ${notFound} not registered yet.`, upgraded, notFound });
   } catch (err) { res.status(500).json({ success: false, message: err.message }); }
+ });
+
 app.use((err, req, res, next) => res.status(500).json({ success: false, message: err.message }));
  
 module.exports = app;
