@@ -1233,4 +1233,25 @@ router.post('/voiceover', protect, async (req, res) => {
   } catch (err) { res.status(500).json({ success: false, message: err.message }); }
 });
 
+// POST /api/admin/apply-whitelist
+router.post('/admin/apply-whitelist', async (req, res) => {
+  try {
+    const secret = req.headers['x-admin-secret'];
+    if (secret !== process.env.ADMIN_SECRET)
+      return res.status(401).json({ success: false, message: 'Unauthorized.' });
+    const entries = await Whitelist.find({});
+    let upgraded = 0, notFound = 0;
+    for (const entry of entries) {
+      const user = await User.findOne({ email: entry.email });
+      if (user) {
+        user.plan = entry.plan;
+        user.planStatus = 'active';
+        user.applyPlanLimits();
+        await user.save();
+        upgraded++;
+      } else { notFound++; }
+    }
+    res.json({ success: true, message: `Done! ${upgraded} users upgraded, ${notFound} not registered yet.`, upgraded, notFound });
+  } catch (err) { res.status(500).json({ success: false, message: err.message }); }
+});
 module.exports = router;
