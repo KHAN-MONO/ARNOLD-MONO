@@ -169,7 +169,28 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     res.json({ success: true, message: 'If this email exists, a reset link has been sent.' });
   } catch(err) { res.status(500).json({ success: false, message: err.message }); }
 });
- 
+
+// Admin — force upgrade all whitelisted users
+app.post('/api/admin/apply-whitelist', async (req, res) => {
+  try {
+    await connectDB();
+    const secret = req.headers['x-admin-secret'];
+    if (secret !== process.env.ADMIN_SECRET)
+      return res.status(401).json({ success: false, message: 'Unauthorized.' });
+    const { Whitelist, User } = require('./models');
+    const entries = await Whitelist.find({});
+    let upgraded = 0, notFound = 0;
+    for (const entry of entries) {
+      const user = await User.findOne({ email: entry.email });
+      if (user) {
+        user.plan = entry.plan;
+        user.planStatus = 'active';
+        await user.save();
+        upgraded++;
+      } else { notFound++; }
+    }
+    res.json({ success: true, message: `Done! ${upgraded} users upgraded, ${notFound} not registered yet.`, upgraded, notFound });
+  } catch (err) { res.status(500).json({ success: false, message: err.message }); }
 app.use((err, req, res, next) => res.status(500).json({ success: false, message: err.message }));
  
 module.exports = app;
