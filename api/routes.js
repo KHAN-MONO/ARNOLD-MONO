@@ -518,7 +518,7 @@ router.delete('/files/:id', protect, async (req, res) => {
 router.post('/payments/flutterwave/init', protect, async (req, res) => {
   try {
     const { plan } = req.body;
-    const planPrices = { creator: 24000, boss: 62400 };
+    const planPrices = { creator: 10000, boss: 20000 };
     const amount = planPrices[plan];
     if (!amount) return res.status(400).json({ success: false, message: 'Invalid plan.' });
 
@@ -701,9 +701,9 @@ router.post('/payments/stripe/checkout', protect, async (req, res) => {
 
     // Plan prices per currency (minor units: pence / cents)
     const planPrices = {
-      usd: { creator: 1500,  boss: 3900  },   // $15 / $39
-      gbp: { creator: 1200,  boss: 3100  },   // £12 / £31
-      eur: { creator: 1400,  boss: 3600  },   // €14 / €36
+      usd: { creator: 600,   boss: 1200  },   // $6 / $12
+      gbp: { creator: 500,   boss: 1000  },   // £5 / £10
+      eur: { creator: 600,   boss: 1100  },   // €6 / €11
     };
     const supportedCurrencies = ['usd', 'gbp', 'eur'];
     const activeCurrency = supportedCurrencies.includes(currency) ? currency : 'usd';
@@ -1233,25 +1233,4 @@ router.post('/voiceover', protect, async (req, res) => {
   } catch (err) { res.status(500).json({ success: false, message: err.message }); }
 });
 
-// POST /api/admin/apply-whitelist
-router.post('/admin/apply-whitelist', async (req, res) => {
-  try {
-    const secret = req.headers['x-admin-secret'];
-    if (secret !== process.env.ADMIN_SECRET)
-      return res.status(401).json({ success: false, message: 'Unauthorized.' });
-    const entries = await Whitelist.find({});
-    let upgraded = 0, notFound = 0;
-    for (const entry of entries) {
-      const user = await User.findOne({ email: entry.email });
-      if (user) {
-        user.plan = entry.plan;
-        user.planStatus = 'active';
-        user.applyPlanLimits();
-        await user.save();
-        upgraded++;
-      } else { notFound++; }
-    }
-    res.json({ success: true, message: `Done! ${upgraded} users upgraded, ${notFound} not registered yet.`, upgraded, notFound });
-  } catch (err) { res.status(500).json({ success: false, message: err.message }); }
-});
 module.exports = router;
