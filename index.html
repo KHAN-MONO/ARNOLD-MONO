@@ -1538,8 +1538,14 @@ input[type=file]{display:none;}
 <script>
 // ========== ROUTING ==========
 function goTo(page) {
+  if (page === 'dashboard' && !authToken) {
+    openAuthModal('login');
+    notify('Please log in to access your dashboard');
+    return;
+  }
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+page).classList.add('active');
+  const target = document.getElementById('page-'+page);
+  if (target) target.classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>{
     a.classList.remove('active');
     if(a.id==='nav-'+page) a.classList.add('active');
@@ -2346,26 +2352,6 @@ async function submitAuth() {
   btn.disabled = false;
   btn.textContent = authMode === 'register' ? 'Create Account →' : 'Login →';
   document.getElementById('auth-modal').classList.remove('open');
-}
-
-// ── CHECK LOGIN ON DASHBOARD ──────────────────────────────────
-const _origGoTo = goTo;
-function goTo(page) {
-  if (page === 'dashboard' && !authToken) {
-    openAuthModal('login');
-    notify('Please log in to access your dashboard');
-    return;
-  }
-  _origGoTo(page);
-  // Update nav buttons based on login state
-  const navRight = document.querySelector('.nav-right');
-  if (navRight && currentUser) {
-    navRight.innerHTML = `
-      <span style="font-size:.8rem;color:var(--muted);">👋 ${currentUser.name}</span>
-      <button class="btn-nav btn-nav-outline" onclick="logoutUser()">Log Out</button>
-      <button class="btn-nav btn-nav-fill" onclick="goTo('dashboard')">Dashboard →</button>
-    `;
-  }
 }
 
 // ── BACKEND API CONNECTION ==========
