@@ -24,11 +24,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white)
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;font-family:inherit;}
 input,textarea,select{font-family:inherit;}
- 
+
 /* PAGES */
 .page{display:none;}
 .page.active{display:block;}
- 
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;background:rgba(8,8,8,0.9);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-0.02em;color:var(--white);cursor:pointer;}
@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .btn-nav-outline:hover{background:rgba(244,241,235,0.06);}
 .btn-nav-fill{background:var(--accent);color:#000;}
 .btn-nav-fill:hover{background:#1ab8ff;transform:translateY(-1px);}
- 
+
 /* TYPOGRAPHY UTILITIES */
 .tag{display:inline-block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
 .h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,7vw,6.5rem);line-height:.95;letter-spacing:-.03em;}
@@ -51,11 +51,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .dim{color:rgba(244,241,235,.25);}
 .muted{color:var(--muted);}
 .accent{color:var(--accent);}
- 
+
 /* LAYOUT */
 .container{max-width:1180px;margin:0 auto;padding:0 2rem;}
 .section{padding:5.5rem 2rem;}
- 
+
 /* BUTTONS */
 .btn{display:inline-block;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;padding:.85rem 2rem;border-radius:2px;border:none;transition:all .2s;cursor:pointer;}
 .btn-primary{background:var(--accent);color:#000;}
@@ -64,18 +64,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .btn-secondary:hover{background:rgba(244,241,235,.05);border-color:rgba(244,241,235,.4);}
 .btn-dark{background:#000;color:var(--accent);border:none;}
 .btn-dark:hover{background:#111;transform:translateY(-1px);}
- 
+
 /* CARD */
 .card{background:var(--card);border:0.5px solid var(--border);border-radius:4px;padding:2rem;transition:border-color .3s;}
 .card:hover{border-color:rgba(244,241,235,.2);}
- 
+
 /* GRID */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
 @media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
 @media(max-width:700px){nav{padding:1rem 1.25rem;}.nav-links{display:none;}.section{padding:3.5rem 1.25rem;}}
- 
+
 /* ============ HOME PAGE ============ */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 25%,rgba(0,170,255,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(255,77,0,.05),transparent 60%);}
@@ -88,21 +88,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-stats{display:flex;gap:3rem;margin-top:4.5rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;animation:fadeUp .5s .4s ease both;}
 .stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.03em;}
 .stat-label{font-size:.72rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:.2rem;}
- 
+
 /* MARQUEE */
 .marquee-bar{overflow:hidden;border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);padding:.85rem 0;background:rgba(0,170,255,.03);}
 .marquee-inner{display:flex;gap:3rem;width:max-content;animation:scroll 24s linear infinite;}
 .mi{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,235,.22);white-space:nowrap;}
 .mi.a{color:var(--accent);}
 @keyframes scroll{to{transform:translateX(-50%);}}
- 
+
 /* MODELS SECTION */
 .model-featured{border:.5px solid rgba(0,170,255,.45);background:rgba(0,170,255,.05);padding:2rem;border-radius:4px;position:relative;grid-column:span 2;}
 .model-badge{position:absolute;top:-1px;left:1.5rem;background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .75rem;}
 .model-tag{font-size:.7rem;padding:3px 10px;background:rgba(0,170,255,.1);color:var(--accent);border:.5px solid rgba(0,170,255,.25);border-radius:2px;}
 .model-stat{background:rgba(244,241,235,.04);border:.5px solid var(--border);border-radius:4px;padding:.85rem;text-align:center;}
 .model-stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--accent);}
- 
+
 /* STEPS */
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:.5px solid var(--border);}
 .step{padding:2.25rem;border-right:.5px solid var(--border);position:relative;transition:background .3s;}
@@ -111,7 +111,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .step-num{font-family:'Syne',sans-serif;font-weight:800;font-size:3.5rem;color:rgba(244,241,235,.05);position:absolute;top:1.25rem;right:1.25rem;}
 .step-icon{width:42px;height:42px;background:rgba(0,170,255,.12);border:.5px solid rgba(0,170,255,.25);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.25rem;}
 @media(max-width:700px){.steps-grid{grid-template-columns:1fr;}.step{border-right:none;border-bottom:.5px solid var(--border);}.model-featured{grid-column:span 1;}}
- 
+
 /* FEATURES */
 .feat-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.4rem;border:.5px solid var(--border);border-radius:2px;cursor:pointer;transition:all .3s;}
 .feat-item:hover,.feat-item.active{border-color:rgba(0,170,255,.35);background:rgba(0,170,255,.05);}
@@ -127,7 +127,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mock-prog{height:3px;background:rgba(244,241,235,.07);border-radius:2px;margin:1rem 0;overflow:hidden;}
 .mock-prog::after{content:'';display:block;height:100%;width:68%;background:var(--accent);border-radius:2px;animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
- 
+
 /* UPLOAD SECTION */
 .upload-zone{border:1.5px dashed rgba(0,170,255,.35);border-radius:8px;padding:3rem 2rem;text-align:center;cursor:pointer;transition:all .3s;background:rgba(0,170,255,.03);position:relative;}
 .upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:rgba(0,170,255,.07);}
@@ -137,22 +137,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .upload-thumb .remove{position:absolute;top:4px;right:4px;background:rgba(255,77,0,.8);color:white;border:none;border-radius:50%;width:20px;height:20px;font-size:.7rem;display:none;align-items:center;justify-content:center;}
 .upload-thumb:hover .remove{display:flex;}
 .file-type-tag{position:absolute;bottom:4px;left:4px;font-size:.6rem;background:rgba(0,0,0,.7);color:var(--accent);padding:2px 6px;border-radius:2px;font-weight:600;letter-spacing:.06em;}
- 
+
 /* TESTIMONIALS */
 .testi{border:.5px solid var(--border);padding:1.85rem;border-radius:2px;}
 .testi-q{font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:.85rem;}
 .testi-avatar{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:800;font-size:.7rem;display:flex;align-items:center;justify-content:center;}
- 
+
 /* CTA BANNER */
 .cta-banner{background:var(--accent);color:#000;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;}
 .cta-banner::before{content:'MC';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-weight:800;font-size:20rem;color:rgba(0,0,0,.06);pointer-events:none;line-height:1;}
- 
+
 /* FOOTER */
 footer{border-top:.5px solid var(--border);padding:2.5rem;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
 .footer-col h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;color:var(--muted);}
 .footer-col a{display:block;font-size:.82rem;color:rgba(244,241,235,.35);margin-bottom:.5rem;transition:color .2s;}
 .footer-col a:hover{color:var(--white);}
- 
+
 /* ============ PRICING PAGE ============ */
 .plans-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
 @media(max-width:800px){.plans-wrap{grid-template-columns:1fr;}}
@@ -179,7 +179,7 @@ footer{border-top:.5px solid var(--border);padding:2.5rem;display:flex;align-ite
 .curr-toggle{display:flex;align-items:center;gap:.4rem;background:rgba(244,241,235,.05);border:.5px solid var(--border);border-radius:4px;padding:3px;}
 .curr-btn{padding:.38rem .95rem;border:none;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.75rem;cursor:pointer;transition:all .2s;background:transparent;color:var(--muted);}
 .curr-btn.active{background:var(--accent);color:#000;}
- 
+
 /* ============ DASHBOARD ============ */
 .dash-layout{display:flex;min-height:100vh;padding-top:64px;}
 .sidebar{width:240px;flex-shrink:0;background:var(--card);border-right:.5px solid var(--border);padding:1.5rem 0;position:fixed;top:64px;bottom:0;overflow-y:auto;}
@@ -210,7 +210,7 @@ footer{border-top:.5px solid var(--border);padding:2.5rem;display:flex;align-ite
 .modal-header{padding:1.5rem 1.75rem 1rem;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .modal-body{padding:1.5rem 1.75rem;}
 .modal-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;}
- 
+
 /* FORM ELEMENTS */
 .field{margin-bottom:1.1rem;}
 .field label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:.4rem;letter-spacing:.04em;}
@@ -219,7 +219,7 @@ footer{border-top:.5px solid var(--border);padding:2.5rem;display:flex;align-ite
 .field input::placeholder,.field textarea::placeholder{color:rgba(244,241,235,.2);}
 .field select{appearance:none;background:rgba(244,241,235,.05);color:var(--white);}
 .field select option{background:#111;color:var(--white);}
- 
+
 /* UPLOAD WIDGET */
 .upload-widget{border:1.5px dashed rgba(0,170,255,.3);border-radius:8px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:all .3s;}
 .upload-widget:hover{border-color:var(--accent);background:rgba(0,170,255,.04);}
@@ -233,24 +233,24 @@ input[type=file]{display:none;}
 .file-item-remove:hover{color:var(--accent2);}
 .file-progress{height:3px;background:rgba(244,241,235,.08);border-radius:2px;margin-top:.35rem;overflow:hidden;}
 .file-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s;}
- 
+
 /* VIDEO GENERATION PANEL */
 .gen-panel{background:var(--card);border:.5px solid var(--border);border-radius:4px;padding:1.5rem;margin-top:1.5rem;}
 .gen-step{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:.5px solid var(--border);}
 .gen-step:last-child{border-bottom:none;}
 .gen-step-num{width:28px;height:28px;border-radius:50%;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.78rem;color:var(--accent);flex-shrink:0;}
 .gen-step-num.done{background:rgba(0,208,132,.15);border-color:rgba(0,208,132,.3);color:var(--success);}
- 
+
 /* PLATFORM ICONS */
 .platform-grid{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:.5rem;}
 .platform-chip{display:flex;align-items:center;gap:.4rem;font-size:.75rem;padding:.35rem .85rem;border:.5px solid var(--border);border-radius:2px;cursor:pointer;transition:all .2s;}
 .platform-chip.sel{border-color:var(--accent);background:rgba(0,170,255,.1);color:var(--accent);}
- 
+
 /* TABS */
 .tabs{display:flex;gap:.25rem;background:rgba(244,241,235,.04);border:.5px solid var(--border);border-radius:4px;padding:3px;margin-bottom:1.5rem;}
 .tab{flex:1;padding:.5rem;text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;border-radius:2px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;}
 .tab.active{background:var(--accent);color:#000;}
- 
+
 /* PAY TABS */
 .pay-tab{flex:1;padding:.5rem .4rem;background:rgba(244,241,235,.05);border:.5px solid rgba(244,241,235,.1);color:var(--muted);font-size:.76rem;font-family:'DM Sans',sans-serif;border-radius:4px;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .pay-tab.active{background:rgba(0,170,255,.12);border-color:rgba(0,170,255,.4);color:var(--white);}
@@ -259,7 +259,7 @@ input[type=file]{display:none;}
 .pay-input::placeholder{color:rgba(244,241,235,.2);}
 .pay-submit-btn{width:100%;padding:.88rem;background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.04em;border:none;border-radius:4px;cursor:pointer;transition:all .2s;margin-bottom:.4rem;}
 .pay-submit-btn:hover{filter:brightness(1.1);}
- 
+
 /* ============ OTHER PAGES ============ */
 .page-hero{padding:9rem 2rem 4rem;text-align:center;position:relative;}
 .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,170,255,.07),transparent 70%);}
@@ -276,30 +276,30 @@ input[type=file]{display:none;}
 .policy-body ul{padding-left:1.5rem;}
 .aff-stat{text-align:center;padding:2rem;border:.5px solid var(--border);border-radius:4px;}
 .aff-stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;color:var(--accent);}
- 
+
 /* ABOUT */
 .team-card{text-align:center;padding:2rem 1.5rem;}
 .team-avatar{width:72px;height:72px;border-radius:50%;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;}
- 
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
- 
+
 /* CONTACT */
 .contact-card{border:.5px solid rgba(244,241,235,.1);padding:2rem;border-radius:4px;transition:border-color .3s;}
 .contact-card:hover{border-color:rgba(0,170,255,.3);}
- 
+
 /* SUCCESS */
 .success-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;}
 .success-overlay.open{display:flex;}
 .success-box{background:#111;border:.5px solid rgba(0,170,255,.4);border-radius:8px;padding:3rem 2.5rem;text-align:center;max-width:380px;margin:1rem;animation:fadeUp .3s ease both;}
- 
+
 /* NOTIFICATION */
 .notif{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:var(--card);border:.5px solid rgba(0,208,132,.4);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;font-size:.85rem;transform:translateY(80px);opacity:0;transition:all .4s;pointer-events:none;}
 .notif.show{transform:translateY(0);opacity:1;}
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <div class="logo" onclick="goTo('home')">MONO<span>.</span>COMPLEX<span style="font-size:.65rem;color:var(--accent);vertical-align:super;letter-spacing:.04em;">.ai</span></div>
@@ -316,13 +316,13 @@ input[type=file]{display:none;}
     <button class="btn-nav btn-nav-fill" onclick="openAuthModal('register')">Get Started →</button>
   </div>
 </nav>
- 
+
 <!-- NOTIFICATION -->
 <div id="notif" class="notif">✓ <span id="notif-msg">Done!</span></div>
- 
+
 <!-- ===== HOME PAGE ===== -->
 <div id="page-home" class="page active">
- 
+
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
@@ -340,14 +340,14 @@ input[type=file]{display:none;}
       <div><div class="stat-num">24/7</div><div class="stat-label">Autopilot Mode</div></div>
     </div>
   </section>
- 
+
   <div class="marquee-bar">
     <div class="marquee-inner">
       <span class="mi">Text to Video</span><span class="mi a">★</span><span class="mi">AI Voiceovers</span><span class="mi a">★</span><span class="mi">Auto Publish</span><span class="mi a">★</span><span class="mi">Kling 3.0</span><span class="mi a">★</span><span class="mi">Google Veo 2</span><span class="mi a">★</span><span class="mi">OpenAI Sora</span><span class="mi a">★</span><span class="mi">Nano Banana Pro</span><span class="mi a">★</span><span class="mi">TikTok · Reels · Shorts</span><span class="mi a">★</span><span class="mi">Script Generator</span><span class="mi a">★</span><span class="mi">File Upload</span><span class="mi a">★</span><span class="mi">Starter · Creator · Boss</span><span class="mi a">★</span>
       <span class="mi">Text to Video</span><span class="mi a">★</span><span class="mi">AI Voiceovers</span><span class="mi a">★</span><span class="mi">Auto Publish</span><span class="mi a">★</span><span class="mi">Kling 3.0</span><span class="mi a">★</span><span class="mi">Google Veo 2</span><span class="mi a">★</span><span class="mi">OpenAI Sora</span><span class="mi a">★</span><span class="mi">Nano Banana Pro</span><span class="mi a">★</span><span class="mi">TikTok · Reels · Shorts</span><span class="mi a">★</span><span class="mi">Script Generator</span><span class="mi a">★</span><span class="mi">File Upload</span><span class="mi a">★</span><span class="mi">Starter · Creator · Boss</span><span class="mi a">★</span>
     </div>
   </div>
- 
+
   <!-- AI MODELS -->
   <section class="section" style="background:var(--black);">
     <div class="container">
@@ -355,7 +355,7 @@ input[type=file]{display:none;}
       <h2 class="h2" style="margin-bottom:.75rem;">Built on the world's <span class="dim">best AI models</span></h2>
       <p class="muted" style="margin-bottom:2.5rem;max-width:480px;font-size:.93rem;">Five of the most powerful AI engines on the planet — all inside one platform.</p>
       <div class="grid-2" style="align-items:start;">
- 
+
         <!-- Kling 3.0 FEATURED -->
         <div class="model-featured" style="grid-column:span 2;">
           <div class="model-badge">#1 Video Model · Kling 3.0</div>
@@ -381,7 +381,7 @@ input[type=file]{display:none;}
             </div>
           </div>
         </div>
- 
+
         <!-- Google Veo -->
         <div class="card" style="display:flex;gap:.85rem;align-items:flex-start;border-color:rgba(52,168,83,.25);background:rgba(52,168,83,.04);">
           <div style="width:38px;height:38px;background:rgba(52,168,83,.12);border:.5px solid rgba(52,168,83,.35);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🌿</div>
@@ -398,7 +398,7 @@ input[type=file]{display:none;}
             </div>
           </div>
         </div>
- 
+
         <!-- OpenAI Sora -->
         <div class="card" style="display:flex;gap:.85rem;align-items:flex-start;border-color:rgba(16,163,127,.25);background:rgba(16,163,127,.04);">
           <div style="width:38px;height:38px;background:rgba(16,163,127,.12);border:.5px solid rgba(16,163,127,.35);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🌐</div>
@@ -415,7 +415,7 @@ input[type=file]{display:none;}
             </div>
           </div>
         </div>
- 
+
         <!-- Nano Banana Pro -->
         <div class="card" style="display:flex;gap:.85rem;align-items:flex-start;border-color:rgba(255,200,0,.25);background:rgba(255,200,0,.03);">
           <div style="width:38px;height:38px;background:rgba(255,200,0,.12);border:.5px solid rgba(255,200,0,.35);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🍌</div>
@@ -432,7 +432,7 @@ input[type=file]{display:none;}
             </div>
           </div>
         </div>
- 
+
         <!-- ElevenLabs -->
         <div class="card" style="display:flex;gap:.85rem;align-items:flex-start;">
           <div style="width:38px;height:38px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.25);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🎙️</div>
@@ -441,7 +441,7 @@ input[type=file]{display:none;}
             <p style="font-size:.82rem;color:var(--muted);line-height:1.6;">40+ ultra-realistic AI voices across multiple languages and accents — auto-matched to your script and platform.</p>
           </div>
         </div>
- 
+
         <!-- All Plans note -->
         <div class="card" style="display:flex;gap:.85rem;align-items:flex-start;border-color:rgba(0,170,255,.2);grid-column:span 2;">
           <div style="font-size:1.75rem;flex-shrink:0;">⚡</div>
@@ -454,7 +454,7 @@ input[type=file]{display:none;}
       </div>
     </div>
   </section>
- 
+
   <!-- HOW IT WORKS -->
   <section class="section" id="how-section" style="background:var(--mid);">
     <div class="container">
@@ -467,7 +467,7 @@ input[type=file]{display:none;}
       </div>
     </div>
   </section>
- 
+
   <!-- FEATURES + UPLOAD -->
   <section class="section" style="background:var(--black);">
     <div class="container">
@@ -501,7 +501,7 @@ input[type=file]{display:none;}
       </div>
     </div>
   </section>
- 
+
   <!-- TESTIMONIALS -->
   <section class="section" style="background:var(--mid);">
     <div class="container">
@@ -514,14 +514,14 @@ input[type=file]{display:none;}
       </div>
     </div>
   </section>
- 
+
   <!-- CTA -->
   <div class="cta-banner">
     <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-.03em;line-height:1;margin-bottom:.85rem;position:relative;z-index:1;">Your channel.<br>On autopilot.</h2>
     <p style="font-size:1rem;color:rgba(0,0,0,.6);margin-bottom:2rem;position:relative;z-index:1;">Join 50,000+ creators on Starter, Creator & Boss plans.</p>
     <button class="btn btn-dark" onclick="goTo('pricing')" style="position:relative;z-index:1;">Choose Your Plan →</button>
   </div>
- 
+
   <!-- ═══ CREATOR SECTION ═══ -->
   <div style="background:var(--mid);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);padding:3.5rem 2rem;">
     <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
@@ -567,7 +567,7 @@ input[type=file]{display:none;}
       </div>
     </div>
   </div>
- 
+
   <footer>
     <div>
       <div class="logo" style="margin-bottom:.5rem;">MONO<span>.</span>COMPLEX<span style="font-size:.65rem;color:var(--accent);vertical-align:super;letter-spacing:.04em;">.ai</span></div>
@@ -579,7 +579,7 @@ input[type=file]{display:none;}
     <div class="footer-col"><h4>Legal</h4><a href="#" onclick="goTo('privacy');return false;">Privacy Policy</a><a href="#" onclick="goTo('terms');return false;">Terms of Service</a><a href="#" onclick="goTo('contact');return false;">Contact & Support</a></div>
   </footer>
 </div>
- 
+
 <!-- ===== PRICING PAGE ===== -->
 <div id="page-pricing" class="page">
   <section class="page-hero">
@@ -601,7 +601,7 @@ input[type=file]{display:none;}
   <section class="section" style="padding-top:1rem;">
     <div class="container">
       <div class="plans-wrap">
- 
+
         <!-- NANO -->
         <div class="plan">
           <div class="plan-emoji">🔬</div>
@@ -620,7 +620,7 @@ input[type=file]{display:none;}
           <div class="plan-feat">Mono Complex watermark</div>
           <button class="plan-btn plan-btn-outline" onclick="openCheckout('Starter','0','Free')">Get Started Free</button>
         </div>
- 
+
         <!-- BANANA -->
         <div class="plan featured">
           <div class="plan-badge">Most Popular</div>
@@ -641,7 +641,7 @@ input[type=file]{display:none;}
           <div class="plan-feat">Content scheduler</div>
           <button class="plan-btn plan-btn-fill" onclick="openCheckout('Creator','15','$15/mo')">Start Creator Plan →</button>
         </div>
- 
+
         <!-- PRO -->
         <div class="plan">
           <div class="plan-emoji">👑</div>
@@ -661,9 +661,9 @@ input[type=file]{display:none;}
           <div class="plan-feat">Priority support</div>
           <button class="plan-btn plan-btn-outline" onclick="openCheckout('Boss','39','$39/mo')">Go Boss</button>
         </div>
- 
+
       </div>
- 
+
       <!-- FAQ -->
       <div style="margin-top:4rem;">
         <div class="tag">FAQ</div>
@@ -680,7 +680,7 @@ input[type=file]{display:none;}
   </section>
   <div id="footer-pricing"></div>
 </div>
- 
+
 <!-- ===== DASHBOARD PAGE ===== -->
 <div id="page-dashboard" class="page">
   <div class="dash-layout">
@@ -700,10 +700,10 @@ input[type=file]{display:none;}
       <div class="sidebar-item" onclick="switchDash('billing')"><span class="sidebar-icon">💳</span>Billing</div>
       <div class="sidebar-item" style="margin-top:1rem;border-top:.5px solid var(--border);padding-top:1.25rem;" onclick="goTo('home')"><span class="sidebar-icon">←</span>Back to Site</div>
     </div>
- 
+
     <!-- Dash Content -->
     <div class="dash-content">
- 
+
       <!-- OVERVIEW -->
       <div id="dash-overview">
         <div class="dash-header">
@@ -723,7 +723,7 @@ input[type=file]{display:none;}
           <div class="series-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;"><span class="h3">Motivation Clips</span><span class="series-status paused">Paused</span></div><p style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem;">Daily motivation for entrepreneurs.</p><div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div><div style="font-size:.72rem;color:var(--muted);">20% quota used · 48 videos left</div></div>
         </div>
       </div>
- 
+
       <!-- CREATE VIDEO -->
       <div id="dash-create" style="display:none;">
         <div class="dash-header">
@@ -798,7 +798,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- UPLOAD FILES -->
       <div id="dash-upload" style="display:none;">
         <div class="dash-header">
@@ -836,7 +836,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- MY SERIES -->
       <div id="dash-series" style="display:none;">
         <div class="dash-header">
@@ -850,7 +850,7 @@ input[type=file]{display:none;}
           <div class="series-card" style="border-style:dashed;display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="document.getElementById('new-series-modal').classList.add('open')"><div style="text-align:center;"><div style="font-size:2rem;margin-bottom:.5rem;">+</div><div class="h3">New Series</div><p style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Create a new automated content series</p></div></div>
         </div>
       </div>
- 
+
       <!-- SCHEDULE -->
       <div id="dash-schedule" style="display:none;">
         <div class="dash-header"><div><div class="tag">Content Calendar</div><h2 class="h2">Schedule</h2></div></div>
@@ -861,7 +861,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- ANALYTICS -->
       <div id="dash-analytics" style="display:none;">
         <div class="dash-header"><div><div class="tag">Analytics</div><h2 class="h2">Performance</h2></div></div>
@@ -875,7 +875,7 @@ input[type=file]{display:none;}
           ${[40,65,45,80,55,90,70,95,60,85,75,100].map(h=>`<div style="background:rgba(0,170,255,.25);width:100%;height:${h}%;border-radius:2px 2px 0 0;position:relative;"><div style="position:absolute;bottom:-1.2rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--muted);white-space:nowrap;"></div></div>`).join('')}
         </div>
       </div>
- 
+
       <!-- BILLING -->
       <div id="dash-billing" style="display:none;">
         <div class="dash-header"><div><div class="tag">Billing</div><h2 class="h2">Your Plan</h2></div></div>
@@ -894,7 +894,7 @@ input[type=file]{display:none;}
           ${[['May 15','Creator Plan','$15.00','✓'],['Apr 15','Creator Plan','$15.00','✓'],['Mar 15','Creator Plan','$15.00','✓']].map(([d,p,a,s])=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 0;border-bottom:.5px solid var(--border);font-size:.83rem;"><span style="color:var(--muted);">${d}</span><span>${p}</span><span style="font-family:'Syne',sans-serif;font-weight:700;">${a}</span><span style="color:var(--success);">${s} Paid</span></div>`).join('')}
         </div>
       </div>
- 
+
       <!-- URL → VIDEO -->
       <div id="dash-url-video" style="display:none;">
         <div class="dash-header"><div><div class="tag">URL to Video</div><h2 class="h2">Reddit / Article → Video</h2></div></div>
@@ -958,7 +958,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- AI AVATAR -->
       <div id="dash-avatar" style="display:none;">
         <div class="dash-header"><div><div class="tag">AI Avatars</div><h2 class="h2">Talking Avatar Videos</h2></div><span style="font-size:.7rem;padding:3px 10px;background:rgba(255,200,0,.12);color:rgba(255,200,0,.9);border:.5px solid rgba(255,200,0,.25);border-radius:2px;">Boss Plan</span></div>
@@ -993,7 +993,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- TOPIC IDEAS -->
       <div id="dash-ideas" style="display:none;">
         <div class="dash-header">
@@ -1037,7 +1037,7 @@ input[type=file]{display:none;}
           </div>`).join('')}
         </div>
       </div>
- 
+
       <!-- CONTENT CALENDAR -->
       <div id="dash-calendar" style="display:none;">
         <div class="dash-header">
@@ -1069,7 +1069,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- ANALYTICS (enhanced) -->
       <div id="dash-analytics" style="display:none;">
         <div class="dash-header">
@@ -1108,7 +1108,7 @@ input[type=file]{display:none;}
           </div>`).join('')}
         </div>
       </div>
- 
+
       <!-- VOICE CLONE -->
       <div id="dash-voices" style="display:none;">
         <div class="dash-header"><div><div class="tag">Voice Cloning</div><h2 class="h2">Clone Your Voice</h2></div><span style="font-size:.7rem;padding:3px 10px;background:rgba(0,208,132,.1);color:rgba(0,208,132,.9);border:.5px solid rgba(0,208,132,.25);border-radius:2px;">Creator+ Plan</span></div>
@@ -1148,7 +1148,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
       <!-- BRAND KIT -->
       <div id="dash-brand" style="display:none;">
         <div class="dash-header"><div><div class="tag">Brand Kit</div><h2 class="h2">Your Brand Identity</h2></div>
@@ -1226,7 +1226,7 @@ input[type=file]{display:none;}
           </div>
         </div>
       </div>
- 
+
     </div><!-- end dash-content -->
   </div>
 </div>
@@ -1248,7 +1248,7 @@ input[type=file]{display:none;}
     </div>
   </section>
 </div>
- 
+
 <!-- ===== ABOUT PAGE ===== -->
 <div id="page-about" class="page">
   <section class="page-hero">
@@ -1297,7 +1297,7 @@ input[type=file]{display:none;}
     </div>
   </section>
 </div>
- 
+
 <!-- ===== AFFILIATE PAGE ===== -->
 <div id="page-affiliate" class="page">
   <section class="page-hero">
@@ -1320,7 +1320,7 @@ input[type=file]{display:none;}
     </div>
   </section>
 </div>
- 
+
 <!-- ===== CONTACT PAGE ===== -->
 <div id="page-contact" class="page">
   <section class="page-hero">
@@ -1350,7 +1350,7 @@ input[type=file]{display:none;}
     </div>
   </section>
 </div>
- 
+
 <!-- ===== PRIVACY PAGE ===== -->
 <div id="page-privacy" class="page">
   <section class="page-hero"><div class="page-hero-bg"></div><div style="position:relative;z-index:1;"><div class="tag">Legal</div><h1 class="h1">Privacy <span class="dim">Policy</span></h1><p class="muted" style="margin-top:.75rem;">Last updated: May 2025</p></div></section>
@@ -1364,7 +1364,7 @@ input[type=file]{display:none;}
     <h2>7. Contact</h2><p>For any privacy concerns, contact us at <a href="mailto:arnoldmono43@gmail.com" style="color:var(--accent);">arnoldmono43@gmail.com</a>.</p>
   </div>
 </div>
- 
+
 <!-- ===== TERMS PAGE ===== -->
 <div id="page-terms" class="page">
   <section class="page-hero"><div class="page-hero-bg"></div><div style="position:relative;z-index:1;"><div class="tag">Legal</div><h1 class="h1">Terms of <span class="dim">Service</span></h1><p class="muted" style="margin-top:.75rem;">Last updated: May 2025</p></div></section>
@@ -1379,7 +1379,7 @@ input[type=file]{display:none;}
     <h2>8. Contact</h2><p>For any questions: <a href="mailto:arnoldmono43@gmail.com" style="color:var(--accent);">arnoldmono43@gmail.com</a></p>
   </div>
 </div>
- 
+
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="modal-overlay" id="checkout-overlay" onclick="if(event.target===this)closeCheckout()">
   <div class="modal">
@@ -1503,7 +1503,7 @@ input[type=file]{display:none;}
     </div>
   </div>
 </div>
- 
+
 <!-- SUCCESS MODAL -->
 <div class="success-overlay" id="success-overlay">
   <div class="success-box">
@@ -1513,7 +1513,7 @@ input[type=file]{display:none;}
     <button class="btn btn-primary" onclick="document.getElementById('success-overlay').classList.remove('open');goTo('dashboard');">Go to Dashboard →</button>
   </div>
 </div>
- 
+
 <!-- NEW SERIES MODAL -->
 <div class="modal-overlay" id="new-series-modal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal">
@@ -1534,7 +1534,7 @@ input[type=file]{display:none;}
     </div>
   </div>
 </div>
- 
+
 <script>
 // ========== ROUTING ==========
 function goTo(page) {
@@ -1552,7 +1552,7 @@ function goTo(page) {
   });
   window.scrollTo(0,0);
 }
- 
+
 // ========== DASHBOARD TABS ==========
 function switchDash(tab) {
   document.querySelectorAll('[id^="dash-"]').forEach(el => el.style.display = 'none');
@@ -1571,7 +1571,7 @@ function switchDash(tab) {
   if (tab === 'brand')     loadBrandKit();
   if (tab === 'calendar')  renderCalendar();
 }
- 
+
 // ========== URL → VIDEO ==========
 async function generateFromUrl() {
   const url = document.getElementById('url-input')?.value?.trim();
@@ -1594,7 +1594,7 @@ async function generateFromUrl() {
     notify('❌ Error: ' + e.message);
   }
 }
- 
+
 // ========== AI AVATAR ==========
 async function generateAvatar() {
   const script = document.getElementById('avatar-script')?.value?.trim();
@@ -1615,7 +1615,7 @@ async function generateAvatar() {
     notify('❌ ' + e.message);
   }
 }
- 
+
 // ========== TOPIC IDEAS ==========
 async function loadTopicIdeas() {
   const niche    = document.getElementById('ideas-niche')?.value    || 'finance';
@@ -1635,7 +1635,7 @@ async function loadTopicIdeas() {
     renderDefaultIdeas(grid);
   }
 }
- 
+
 function renderTopicIdeas(grid, topics) {
   grid.innerHTML = topics.map(t => `
     <div class="card" style="cursor:pointer;">
@@ -1648,7 +1648,7 @@ function renderTopicIdeas(grid, topics) {
       <button class="btn btn-secondary" style="margin-top:.85rem;font-size:.72rem;padding:.4rem .85rem;width:100%;" onclick="useTopicIdea('${t.title.replace(/'/g,"\\'")}')">Use This Idea →</button>
     </div>`).join('');
 }
- 
+
 function renderDefaultIdeas(grid) {
   const defaults = [
     {title:'5 Signs You\'re Secretly Rich (And Don\'t Know It)',hook:'Most people are richer than they think...',est:'2M+',type:'list'},
@@ -1662,7 +1662,7 @@ function renderDefaultIdeas(grid) {
   ];
   renderTopicIdeas(grid, defaults);
 }
- 
+
 function useTopicIdea(title) {
   switchDash('create');
   setTimeout(() => {
@@ -1671,7 +1671,7 @@ function useTopicIdea(title) {
     notify('💡 Idea loaded — customize it and generate!');
   }, 200);
 }
- 
+
 // ========== ANALYTICS ==========
 async function loadAnalytics() {
   if (!authToken) return;
@@ -1686,7 +1686,7 @@ async function loadAnalytics() {
     }
   } catch (e) { console.warn('Analytics load error:', e.message); }
 }
- 
+
 async function syncAnalytics() {
   if (!authToken) { notify('Please log in first!'); return; }
   notify('🔄 Syncing analytics from platforms...');
@@ -1696,7 +1696,7 @@ async function syncAnalytics() {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 // ========== VOICE CLONE ==========
 let voiceSampleFile = null;
 function handleVoiceSample(input) {
@@ -1705,7 +1705,7 @@ function handleVoiceSample(input) {
   const el = document.getElementById('voice-sample-name');
   if (el) el.textContent = '✅ ' + voiceSampleFile.name + ' (' + (voiceSampleFile.size/1024/1024).toFixed(1) + ' MB)';
 }
- 
+
 async function cloneVoice() {
   const name = document.getElementById('clone-name')?.value?.trim();
   if (!name) { notify('Please enter a voice name first!'); return; }
@@ -1733,7 +1733,7 @@ async function cloneVoice() {
     }
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 async function loadClonedVoices() {
   if (!authToken) return;
   const list = document.getElementById('cloned-voices-list');
@@ -1753,7 +1753,7 @@ async function loadClonedVoices() {
     }
   } catch (e) { console.warn('Load voices error:', e.message); }
 }
- 
+
 async function deleteVoice(id) {
   if (!confirm('Delete this cloned voice?')) return;
   try {
@@ -1762,7 +1762,7 @@ async function deleteVoice(id) {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 // ========== BRAND KIT ==========
 async function loadBrandKit() {
   if (!authToken) return;
@@ -1782,7 +1782,7 @@ async function loadBrandKit() {
     }
   } catch (e) { console.warn('Load brand kit error:', e.message); }
 }
- 
+
 async function saveBrandKit() {
   if (!authToken) { notify('Please log in first!'); return; }
   const payload = {
@@ -1801,7 +1801,7 @@ async function saveBrandKit() {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 function handleBrandLogo(input) {
   if (!input.files[0]) return;
   const reader = new FileReader();
@@ -1813,7 +1813,7 @@ function handleBrandLogo(input) {
   };
   reader.readAsDataURL(input.files[0]);
 }
- 
+
 function updateBrandPreview() {
   const primary = document.getElementById('brand-primary-hex')?.value || '#00aaff';
   const intro   = document.getElementById('brand-intro')?.value || 'Mono Complex · AI Videos';
@@ -1823,22 +1823,22 @@ function updateBrandPreview() {
   if (pi) { pi.textContent = intro; pi.style.color = primary; }
   if (po) po.textContent = outro;
 }
- 
+
 // Live brand preview
 ['brand-primary-hex','brand-accent-hex','brand-intro','brand-outro'].forEach(id => {
   document.addEventListener('input', e => { if (e.target.id === id) updateBrandPreview(); });
 });
- 
+
 // ========== CALENDAR ==========
 function renderCalendar() {
   // Calendar is already rendered as static HTML — could be enhanced with real data
 }
- 
+
 function scheduleOnDay(day) {
   notify(`📅 Schedule a video for day ${day} — go to Create Video and set the date!`);
   switchDash('create');
 }
- 
+
 // ========== FILE UPLOAD ==========
 function getFileIcon(type,name){
   if(type.startsWith('image/')) return '🖼️';
@@ -1850,7 +1850,7 @@ function getFileIcon(type,name){
 }
 function getExt(name){return name.split('.').pop().toUpperCase();}
 function fmtSize(bytes){if(bytes<1024)return bytes+'B';if(bytes<1048576)return(bytes/1024).toFixed(1)+'KB';return(bytes/1048576).toFixed(1)+'MB';}
- 
+
 function handleFiles(files, containerId) {
   const container = document.getElementById(containerId);
   if(!container) return;
@@ -1876,7 +1876,7 @@ function handleFiles(files, containerId) {
   });
   notify(`${files.length} file${files.length>1?'s':''} uploaded!`);
 }
- 
+
 function handleDrag(e,over,zoneId){
   e.preventDefault();
   document.getElementById(zoneId)?.classList.toggle('drag',over);
@@ -1886,7 +1886,7 @@ function handleDrop(e,containerId,zoneId){
   document.getElementById(zoneId)?.classList.remove('drag');
   handleFiles(e.dataTransfer.files,containerId);
 }
- 
+
 // ========== MODEL UI ==========
 const MODEL_INFO = {
   'kling-3.0-pro':      { label: 'Kling 3.0 Pro',      desc: 'Native 4K · AI Director · 7-language lip sync · #1 globally ranked',        pipeline: 'Kling 3.0 Pro Video Synthesis',   pdesc: 'Native 4K multi-shot generation with audio sync', emoji: '🎬' },
@@ -1927,7 +1927,7 @@ const equivLabels={
   eur:{creator:'≈ $6.00 USD',boss:'≈ $12.00 USD'}
 };
 let activeCurrency='usd';
- 
+
 function setCurrency(cur){
   activeCurrency=cur;
   const p=prices[cur];
@@ -1948,7 +1948,7 @@ function setCurrency(cur){
   document.querySelector('[onclick*="Creator"]')?.setAttribute('onclick',`openCheckout('Creator','${p.creator.raw}','${p.creator.label}')`);
   document.querySelector('[onclick*="\'Boss\'"]')?.setAttribute('onclick',`openCheckout('Boss','${p.boss.raw}','${p.boss.label}')`);
 }
- 
+
 // ========== CHECKOUT ==========
 let currentPlan='',currentAmt='',currentLabel='';
 function openCheckout(plan,amt,label){
@@ -2026,7 +2026,7 @@ function initGPay(amt){
     client.isReadyToPay(req).then(res=>{if(res.result){const btn=client.createButton({onClick:()=>handlePay('Google Pay')});wrap.appendChild(btn);document.getElementById('gpay-fallback').style.display='none';}}).catch(()=>{});
   }catch(e){}
 }
- 
+
 // ========== MISC ==========
 function toggleChip(el){el.classList.toggle('sel');}
 document.querySelectorAll('.feat-item').forEach(item=>{item.addEventListener('click',()=>{document.querySelectorAll('.feat-item').forEach(i=>i.classList.remove('active'));item.classList.add('active');});});
@@ -2037,14 +2037,14 @@ function notify(msg){
   n.classList.add('show');
   setTimeout(()=>n.classList.remove('show'),3500);
 }
- 
+
 // ========== GENERATE VIDEO (REAL — all models) ==========
 async function generateVideo() {
   const promptEl   = document.querySelector('#dash-create textarea');
   const prompt     = promptEl?.value?.trim();
   if (!prompt) { notify('Please enter a video topic or script!'); return; }
   if (!authToken) { notify('Please log in first!'); openAuthModal('login'); return; }
- 
+
   const videoModel = document.getElementById('model-select')?.value || 'kling-3.0-pro';
   const voice      = document.querySelector('#dash-create select[id="voice-select"]')?.value || document.querySelector('#dash-create select')?.value || 'aisha';
   const format     = document.querySelector('input[name="format"]:checked')?.value || '9:16';
@@ -2053,17 +2053,17 @@ async function generateVideo() {
   const language   = document.querySelector('#dash-create select[id="lang-select"]')?.value  || 'en';
   const platforms  = Array.from(document.querySelectorAll('.chip.sel')).map(c => c.dataset.platform).filter(Boolean);
   const scheduledFor = document.querySelector('#dash-create input[type="datetime-local"]')?.value || null;
- 
+
   // Update pipeline UI
   const steps = [2,3,4,5];
   steps.forEach(s => {
     const el = document.getElementById('gen-step-'+s);
     if (el) { el.textContent = s; el.classList.remove('done'); }
   });
- 
+
   const modelInfo = MODEL_INFO[videoModel] || MODEL_INFO['kling-3.0-pro'];
   notify(`🎬 Starting generation with ${modelInfo.label}...`);
- 
+
   // Animate pipeline steps optimistically
   let stepIdx = 0;
   const stepInterval = setInterval(() => {
@@ -2073,14 +2073,14 @@ async function generateVideo() {
       stepIdx++;
     } else { clearInterval(stepInterval); }
   }, 2500);
- 
+
   try {
     const data = await apiCall('/videos/generate', 'POST', {
       prompt, voice, videoModel, format, quality, theme, language,
       platforms: platforms.length ? platforms : ['tiktok'],
       scheduledFor: scheduledFor || undefined,
     });
- 
+
     if (data.success) {
       notify(`✅ Video queued! ${modelInfo.label} is generating — check My Videos shortly.`);
       promptEl.value = '';
@@ -2099,7 +2099,7 @@ async function generateVideo() {
     notify('❌ Connection error. Please try again.');
   }
 }
- 
+
 // Poll video status until published or failed
 let pollingTimers = {};
 async function pollVideoStatus(videoId) {
@@ -2131,7 +2131,7 @@ async function pollVideoStatus(videoId) {
     } catch (e) { /* silently retry */ }
   }, 15000);
 }
- 
+
 // ========== LOAD DASHBOARD STATS ==========
 async function loadDashboardStats() {
   if (!authToken) return;
@@ -2160,7 +2160,7 @@ function fmtNum(n) {
   if (n >= 1000)    return (n/1000).toFixed(1) + 'K';
   return String(n);
 }
- 
+
 // ========== LOAD VIDEOS ==========
 async function loadVideos() {
   if (!authToken) return;
@@ -2191,7 +2191,7 @@ async function loadVideos() {
     }
   } catch (e) { console.warn('Load videos error:', e.message); }
 }
- 
+
 async function deleteVideo(id) {
   if (!confirm('Delete this video? This cannot be undone.')) return;
   try {
@@ -2200,7 +2200,7 @@ async function deleteVideo(id) {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 // ========== LOAD SERIES ==========
 async function loadSeries() {
   if (!authToken) return;
@@ -2225,7 +2225,7 @@ async function loadSeries() {
     }
   } catch (e) { console.warn('Load series error:', e.message); }
 }
- 
+
 async function toggleSeriesStatus(id, currentStatus) {
   const newStatus = currentStatus === 'active' ? 'paused' : 'active';
   try {
@@ -2234,7 +2234,7 @@ async function toggleSeriesStatus(id, currentStatus) {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 async function deleteSeries(id) {
   if (!confirm('Delete this series?')) return;
   try {
@@ -2243,7 +2243,7 @@ async function deleteSeries(id) {
     else notify('❌ ' + data.message);
   } catch (e) { notify('❌ ' + e.message); }
 }
- 
+
 // ========== STOCK FOOTAGE SEARCH ==========
 async function searchStock() {
   const q = document.getElementById('stock-search')?.value?.trim();
@@ -2270,7 +2270,7 @@ async function searchStock() {
   } catch (e) { notify('❌ Stock search failed.'); }
 }
 function useStockClip(url) { notify('✅ Clip attached! It will be used in your next video.'); }
- 
+
 // ========== GENERATE SCRIPT (Nano Banana Pro) ==========
 async function generateScriptNBP(topic, platform) {
   if (!authToken) { notify('Please log in first!'); return; }
@@ -2284,7 +2284,7 @@ async function generateScriptNBP(topic, platform) {
     notify('❌ ' + data.message);
   }
 }
- 
+
 // ========== UPLOAD FILES ==========
 async function uploadFilesToServer(files) {
   if (!authToken) { notify('Please log in first!'); return; }
@@ -2307,7 +2307,7 @@ async function uploadFilesToServer(files) {
     notify('❌ Upload error. Please try again.');
   }
 }
- 
+
 // ── AUTH MODAL ────────────────────────────────────────────────
 let authMode = 'login';
 function openAuthModal(mode) {
@@ -2353,13 +2353,13 @@ async function submitAuth() {
   btn.textContent = authMode === 'register' ? 'Create Account →' : 'Login →';
   document.getElementById('auth-modal').classList.remove('open');
 }
- 
+
 // ── BACKEND API CONNECTION ==========
- 
+
 const API = 'https://arnold-mono.vercel.app/api';
 let authToken = localStorage.getItem('mc_token') || null;
 let currentUser = JSON.parse(localStorage.getItem('mc_user') || 'null');
- 
+
 // Helper — make API calls
 async function apiCall(endpoint, method = 'GET', body = null) {
   const headers = { 'Content-Type': 'application/json' };
@@ -2375,7 +2375,7 @@ async function apiCall(endpoint, method = 'GET', body = null) {
     return { success: false, message: 'Connection error. Please try again.' };
   }
 }
- 
+
 // ── REGISTER ──────────────────────────────────────────────────
 async function registerUser(name, email, password) {
   const data = await apiCall('/auth/register', 'POST', { name, email, password });
@@ -2385,13 +2385,15 @@ async function registerUser(name, email, password) {
     localStorage.setItem('mc_token', authToken);
     localStorage.setItem('mc_user', JSON.stringify(currentUser));
     notify(`✅ Welcome to monocomplex.ai, ${data.user.name}!`);
+    updateNavAfterLogin();
+    closeAuthModal();
     setTimeout(() => goTo('dashboard'), 1500);
   } else {
     notify('❌ ' + data.message);
   }
   return data;
 }
- 
+
 // ── LOGIN ─────────────────────────────────────────────────────
 async function loginUser(email, password) {
   const data = await apiCall('/auth/login', 'POST', { email, password });
@@ -2401,13 +2403,27 @@ async function loginUser(email, password) {
     localStorage.setItem('mc_token', authToken);
     localStorage.setItem('mc_user', JSON.stringify(currentUser));
     notify(`✅ Welcome back, ${data.user.name}!`);
+    updateNavAfterLogin();
+    closeAuthModal();
     setTimeout(() => goTo('dashboard'), 1000);
   } else {
     notify('❌ ' + data.message);
   }
   return data;
 }
- 
+
+// ── UPDATE NAV AFTER LOGIN ────────────────────────────────────
+function updateNavAfterLogin() {
+  const navRight = document.querySelector('.nav-right');
+  if (navRight && currentUser) {
+    navRight.innerHTML = `
+      <span style="font-size:.8rem;color:var(--muted);">👋 ${currentUser.name}</span>
+      <button class="btn-nav btn-nav-outline" onclick="logoutUser()">Log Out</button>
+      <button class="btn-nav btn-nav-fill" onclick="goTo('dashboard')">Dashboard →</button>
+    `;
+  }
+}
+
 // ── LOGOUT ────────────────────────────────────────────────────
 function logoutUser() {
   authToken = null;
@@ -2417,7 +2433,7 @@ function logoutUser() {
   notify('👋 Logged out successfully');
   goTo('home');
 }
- 
+
 // ── PAYMENT — FLUTTERWAVE (NGN) ───────────────────────────────
 async function payWithFlutterwave(plan) {
   if (!authToken) { notify('Please log in first!'); goTo('login'); return; }
@@ -2429,7 +2445,7 @@ async function payWithFlutterwave(plan) {
     notify('❌ Payment error: ' + data.message);
   }
 }
- 
+
 // ── PAYMENT — STRIPE (USD / Google Pay) ──────────────────────
 async function payWithStripe(plan, currency = 'usd') {
   if (!authToken) { notify('Please log in first!'); return; }
@@ -2441,21 +2457,18 @@ async function payWithStripe(plan, currency = 'usd') {
     notify('❌ ' + data.message);
   }
 }
- 
+
 // ── CHECK IF LOGGED IN ON LOAD ────────────────────────────────
 window.addEventListener('load', () => {
-  if (currentUser) {
-    // Update dashboard header
-    const dashH2 = document.querySelector('#dash-overview .h2');
-    if (dashH2) dashH2.textContent = `Welcome back, ${currentUser.name} 👋`;
-    notify(`✅ Logged in as ${currentUser.email} — ${(currentUser.plan||'starter')} plan`);
-    // Load real data into dashboard
+  if (authToken && currentUser) {
+    updateNavAfterLogin();
     loadDashboardStats();
     loadVideos();
     loadSeries();
+    notify(`✅ Logged in as ${currentUser.email} — ${(currentUser.plan||'starter')} plan`);
   }
 });
- 
+
 // ── UPDATE PAY BUTTONS TO USE REAL BACKEND ───────────────────
 function handlePay(method) {
   if (currentAmt === '0') { closeCheckout(); showSuccess(method); return; }
@@ -2523,7 +2536,7 @@ function handlePay(method) {
     </div>
   </div>
 </div>
- 
+
 <script async src="https://pay.google.com/gp/p/js/pay.js"></script>
 </body>
 </html>
