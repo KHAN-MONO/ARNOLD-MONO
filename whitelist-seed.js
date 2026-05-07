@@ -15,6 +15,7 @@ const WHITELISTED_EMAILS = [
   { email: 'winterline56@gmail.com',  plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'kimb3rlymono@gmail.com', plan: 'boss', note: 'Free user added by Arnold' },
   { email: 'monocomplex75@gmail.com', plan: 'boss', note: 'Free user added by Arnold' },
+  { email: 'dc24718@gmail.com', plan: 'boss', note: 'Free user added by Arnold' }
 ];
 
 async function seedWhitelist() {
