@@ -568,6 +568,49 @@ input[type=file]{display:none;}
     </div>
   </div>
 
+  <!-- ===== START CREATING SECTION ===== -->
+  <section class="section" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="container">
+      <div style="background:linear-gradient(135deg,rgba(0,170,255,.08),rgba(0,170,255,.02));border:.5px solid rgba(0,170,255,.25);border-radius:8px;padding:3.5rem;text-align:center;">
+        <div class="tag" style="margin:0 auto .75rem;">Start Creating Now</div>
+        <h2 class="h2" style="margin-bottom:.75rem;">Turn any idea into a <span style="color:var(--accent);">viral AI video</span> in 60 seconds</h2>
+        <p class="muted" style="max-width:520px;margin:0 auto 2rem;line-height:1.75;">No camera. No editing skills. No expensive software. Just type your idea and our AI does everything — script, voiceover, visuals, captions and auto-posting.</p>
+        <!-- Model badges -->
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">
+          <span style="font-size:.78rem;padding:.4rem 1rem;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:20px;color:var(--accent);">🎬 Kling 3.0</span>
+          <span style="font-size:.78rem;padding:.4rem 1rem;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:20px;color:var(--accent);">🌿 Google Veo</span>
+          <span style="font-size:.78rem;padding:.4rem 1rem;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:20px;color:var(--accent);">🌐 OpenAI Sora</span>
+          <span style="font-size:.78rem;padding:.4rem 1rem;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:20px;color:var(--accent);">🍌 Nano Banana Pro</span>
+          <span style="font-size:.78rem;padding:.4rem 1rem;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:20px;color:var(--accent);">🎙️ ElevenLabs</span>
+        </div>
+        <!-- CTA Buttons -->
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;">
+          <button class="btn btn-primary" style="padding:.85rem 2rem;font-size:.95rem;" onclick="openAuthModal('register')">🚀 Start Creating Free →</button>
+          <button class="btn btn-secondary" style="padding:.85rem 2rem;font-size:.95rem;" onclick="goTo('pricing')">View Plans</button>
+        </div>
+        <!-- 4 Steps -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;text-align:left;">
+          <div style="display:flex;gap:.85rem;align-items:flex-start;">
+            <div style="width:32px;height:32px;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;">1</div>
+            <div><div style="font-size:.85rem;font-weight:700;margin-bottom:.25rem;">Type Your Idea</div><div style="font-size:.75rem;color:var(--muted);line-height:1.55;">Describe your topic or paste any URL or Reddit post</div></div>
+          </div>
+          <div style="display:flex;gap:.85rem;align-items:flex-start;">
+            <div style="width:32px;height:32px;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;">2</div>
+            <div><div style="font-size:.85rem;font-weight:700;margin-bottom:.25rem;">Choose Your AI</div><div style="font-size:.75rem;color:var(--muted);line-height:1.55;">Pick from Kling 3.0, Google Veo, Sora or Nano Banana Pro</div></div>
+          </div>
+          <div style="display:flex;gap:.85rem;align-items:flex-start;">
+            <div style="width:32px;height:32px;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;">3</div>
+            <div><div style="font-size:.85rem;font-weight:700;margin-bottom:.25rem;">Generate</div><div style="font-size:.75rem;color:var(--muted);line-height:1.55;">AI writes the script, records the voice and generates visuals</div></div>
+          </div>
+          <div style="display:flex;gap:.85rem;align-items:flex-start;">
+            <div style="width:32px;height:32px;background:rgba(0,170,255,.15);border:.5px solid rgba(0,170,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--accent);flex-shrink:0;">4</div>
+            <div><div style="font-size:.85rem;font-weight:700;margin-bottom:.25rem;">Auto-Publish</div><div style="font-size:.75rem;color:var(--muted);line-height:1.55;">Post directly to TikTok, Instagram Reels and YouTube Shorts</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div>
       <div class="logo" style="margin-bottom:.5rem;">MONO<span>.</span>COMPLEX<span style="font-size:.65rem;color:var(--accent);vertical-align:super;letter-spacing:.04em;">.ai</span></div>
@@ -758,20 +801,34 @@ input[type=file]{display:none;}
               </div>
             </div>
             <div class="field"><label>AI Voice</label>
-              <select><option>🎤 Aisha — Female, Nigerian Accent</option><option>🎤 James — Male, British Accent</option><option>🎤 Zara — Female, American Accent</option><option>🎤 Marcus — Male, Deep Voice</option><option>🎤 Luna — Female, Soft</option></select>
+              <select id="voice-select">
+                <option value="aisha">🎤 Aisha — Female, Nigerian Accent</option>
+                <option value="james">🎤 James — Male, British Accent</option>
+                <option value="zara">🎤 Zara — Female, American Accent</option>
+                <option value="marcus">🎤 Marcus — Male, Deep Voice</option>
+                <option value="luna">🎤 Luna — Female, Soft</option>
+              </select>
             </div>
             <div class="field"><label>Video Format</label>
-              <select><option>📱 9:16 — TikTok / Reels / Shorts</option><option>🖥️ 16:9 — YouTube / Landscape</option><option>⬜ 1:1 — Instagram Square</option></select>
+              <select id="format-select">
+                <option value="9:16">📱 9:16 — TikTok / Reels / Shorts</option>
+                <option value="16:9">🖥️ 16:9 — YouTube / Landscape</option>
+                <option value="1:1">⬜ 1:1 — Instagram Square</option>
+              </select>
             </div>
             <div class="field"><label>Export Quality</label>
-              <select><option>1080p HD</option><option>4K Ultra HD (Boss plan)</option><option>720p Standard</option></select>
+              <select id="quality-select">
+                <option value="1080p">1080p HD</option>
+                <option value="4k">4K Ultra HD (Boss plan)</option>
+                <option value="720p">720p Standard</option>
+              </select>
             </div>
             <div class="field"><label>Publish To</label>
               <div class="platform-grid">
-                <div class="platform-chip sel" onclick="toggleChip(this)">🎵 TikTok</div>
-                <div class="platform-chip" onclick="toggleChip(this)">📺 YouTube Shorts</div>
-                <div class="platform-chip" onclick="toggleChip(this)">📸 Instagram Reels</div>
-                <div class="platform-chip" onclick="toggleChip(this)">👥 Facebook</div>
+                <div class="platform-chip sel" data-platform="tiktok" onclick="toggleChip(this)">🎵 TikTok</div>
+                <div class="platform-chip" data-platform="youtube" onclick="toggleChip(this)">📺 YouTube Shorts</div>
+                <div class="platform-chip" data-platform="instagram" onclick="toggleChip(this)">📸 Instagram Reels</div>
+                <div class="platform-chip" data-platform="facebook" onclick="toggleChip(this)">👥 Facebook</div>
               </div>
             </div>
             <button class="btn btn-primary" style="width:100%;margin-top:.5rem;" onclick="generateVideo()" id="generate-btn">✨ Generate Video with Kling 3.0 Pro</button>
@@ -1233,20 +1290,142 @@ input[type=file]{display:none;}
 <div id="page-blog" class="page">
   <section class="page-hero">
     <div class="page-hero-bg"></div>
-    <div style="position:relative;z-index:1;"><div class="tag">Blog</div><h1 class="h1">Creator <span class="dim">Resources</span></h1><p class="muted" style="margin-top:.75rem;font-size:1rem;">Tips, tutorials, and AI video insights.</p></div>
+    <div style="position:relative;z-index:1;"><div class="tag">Blog</div><h1 class="h1">Creator <span class="dim">Resources</span></h1><p class="muted" style="margin-top:.75rem;font-size:1rem;">Tips, tutorials, and AI video insights from the monocomplex.ai team.</p></div>
   </section>
-  <section class="section" style="padding-top:2rem;">
+
+  <!-- HIGGSFIELD-INSPIRED FEATURES -->
+  <section class="section" style="padding-top:3rem;padding-bottom:0;">
     <div class="container">
-      <div class="grid-3">
-        <div class="blog-card"><div class="blog-thumb">🎬</div><div class="blog-body"><div class="blog-cat">AI Video</div><div class="blog-title">How Kling 3.0 Changed Everything About AI Video</div><div class="blog-meta">May 12, 2025 · 6 min read</div></div></div>
-        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,rgba(255,77,0,.12),rgba(255,77,0,.03));">🚀</div><div class="blog-body"><div class="blog-cat">Growth</div><div class="blog-title">How to Hit 100K Followers in 90 Days with Faceless Content</div><div class="blog-meta">May 8, 2025 · 9 min read</div></div></div>
-        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,208,132,.1),rgba(0,208,132,.02));">💰</div><div class="blog-body"><div class="blog-cat">Monetization</div><div class="blog-title">5 Ways to Monetize Your Faceless Channel in 2025</div><div class="blog-meta">May 3, 2025 · 7 min read</div></div></div>
-        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,rgba(255,189,0,.1),rgba(255,189,0,.02));">📁</div><div class="blog-body"><div class="blog-cat">Tutorial</div><div class="blog-title">How to Use Your Own Media Files to Elevate AI Videos</div><div class="blog-meta">Apr 28, 2025 · 5 min read</div></div></div>
-        <div class="blog-card"><div class="blog-thumb">🎤</div><div class="blog-body"><div class="blog-cat">Voice AI</div><div class="blog-title">Best AI Voices for Nigerian Content Creators in 2025</div><div class="blog-meta">Apr 22, 2025 · 4 min read</div></div></div>
-        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,170,255,.12),rgba(0,170,255,.02));">📊</div><div class="blog-body"><div class="blog-cat">Analytics</div><div class="blog-title">The Metrics That Actually Matter for Short-Form Video</div><div class="blog-meta">Apr 15, 2025 · 8 min read</div></div></div>
+      <div class="tag" style="margin-bottom:.75rem;">Pro Features</div>
+      <h2 class="h2" style="margin-bottom:.5rem;">Cinematic AI tools <span class="dim">inspired by the best</span></h2>
+      <p class="muted" style="margin-bottom:2rem;max-width:520px;">We've taken the best features from the world's top AI video platforms and built them into monocomplex.ai.</p>
+      <div class="grid-2" style="gap:1rem;margin-bottom:3rem;">
+        <div class="card" style="border-color:rgba(0,170,255,.2);background:rgba(0,170,255,.04);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">🎥</div>
+          <div class="h3" style="margin-bottom:.4rem;">Cinematic Camera Control</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Direct your AI videos like a real film director. Control camera angles, zooms, pans, dolly shots and overhead views — all from a simple text prompt. Inspired by Higgsfield's acclaimed camera control system.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Dolly Zoom</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Pan Shot</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Overhead</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Tracking Shot</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Close-up</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Wide Angle</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(0,208,132,.2);background:rgba(0,208,132,.04);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">🖼️</div>
+          <div class="h3" style="margin-bottom:.4rem;">Image to Video</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Upload any still image and bring it to life with cinematic AI motion. Add camera movement, animate characters, and turn product photos into scroll-stopping video ads — in seconds.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,208,132,.1);border:.5px solid rgba(0,208,132,.2);border-radius:2px;color:rgba(0,208,132,.8);">Photo Animate</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,208,132,.1);border:.5px solid rgba(0,208,132,.2);border-radius:2px;color:rgba(0,208,132,.8);">Product Videos</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,208,132,.1);border:.5px solid rgba(0,208,132,.2);border-radius:2px;color:rgba(0,208,132,.8);">Portrait Motion</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,208,132,.1);border:.5px solid rgba(0,208,132,.2);border-radius:2px;color:rgba(0,208,132,.8);">Style Transfer</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(255,189,0,.2);background:rgba(255,189,0,.03);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">🎨</div>
+          <div class="h3" style="margin-bottom:.4rem;">Video Style Themes</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Apply stunning visual styles to every video. Choose from Cinematic, Anime, Neon, Horror, Minimal, Corporate, Reddit Story and more — your brand, your aesthetic, every time.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">🎥 Cinematic</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">🌸 Anime</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">💜 Neon</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">👻 Horror</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">⬜ Minimal</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,189,0,.1);border:.5px solid rgba(255,189,0,.2);border-radius:2px;color:rgba(255,189,0,.9);">🤖 Reddit Story</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(255,77,0,.2);background:rgba(255,77,0,.04);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">💰</div>
+          <div class="h3" style="margin-bottom:.4rem;">Creator Earn Program</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Get rewarded for creating. Submit your best AI videos to our Creator Earn program and receive direct compensation for high-engagement content — a professional alternative to ad revenue shares.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,77,0,.1);border:.5px solid rgba(255,77,0,.2);border-radius:2px;color:rgba(255,77,0,.9);">Direct Pay</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,77,0,.1);border:.5px solid rgba(255,77,0,.2);border-radius:2px;color:rgba(255,77,0,.9);">Monthly Payouts</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(255,77,0,.1);border:.5px solid rgba(255,77,0,.2);border-radius:2px;color:rgba(255,77,0,.9);">₦ NGN Supported</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(160,100,255,.2);background:rgba(160,100,255,.04);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">✏️</div>
+          <div class="h3" style="margin-bottom:.4rem;">Draw to Video</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Sketch a rough idea or storyboard frame and let AI turn your drawing into a fully generated video scene. Perfect for creators with visual ideas who don't want to describe everything in words.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(160,100,255,.1);border:.5px solid rgba(160,100,255,.2);border-radius:2px;color:rgba(160,100,255,.9);">Sketch to Scene</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(160,100,255,.1);border:.5px solid rgba(160,100,255,.2);border-radius:2px;color:rgba(160,100,255,.9);">Storyboard AI</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(160,100,255,.1);border:.5px solid rgba(160,100,255,.2);border-radius:2px;color:rgba(160,100,255,.9);">Boss Plan</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(0,170,255,.2);background:rgba(0,170,255,.04);">
+          <div style="font-size:1.75rem;margin-bottom:.75rem;">🔄</div>
+          <div class="h3" style="margin-bottom:.4rem;">Multi-Model Pipeline</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.65;">Combine multiple AI models in one video. Use Kling 3.0 for the main scenes, Google Veo for cinematic B-roll, Sora for the hero shot, and Nano Banana Pro for editing — all in a single generation.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;">
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Kling + Veo</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Sora + NBP</span>
+            <span style="font-size:.65rem;padding:2px 8px;background:rgba(0,170,255,.1);border:.5px solid rgba(0,170,255,.2);border-radius:2px;color:rgba(0,170,255,.8);">Auto Blend</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- BLOG ARTICLES -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div class="tag" style="margin-bottom:.75rem;">Latest Articles</div>
+      <h2 class="h2" style="margin-bottom:2rem;">Tips &amp; <span class="dim">Tutorials</span></h2>
+      <div class="grid-3">
+
+        <div class="blog-card" onclick="openBlogPost(1)" style="cursor:pointer;">
+          <div class="blog-thumb">🎬</div>
+          <div class="blog-body"><div class="blog-cat">AI Video</div><div class="blog-title">How Kling 3.0 Changed Everything About AI Video</div><div class="blog-meta">May 12, 2025 · 6 min read</div></div>
+        </div>
+
+        <div class="blog-card" onclick="openBlogPost(2)" style="cursor:pointer;background:rgba(255,77,0,.03);">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(255,77,0,.12),rgba(255,77,0,.03));">🚀</div>
+          <div class="blog-body"><div class="blog-cat">Growth</div><div class="blog-title">How to Hit 100K Followers in 90 Days with Faceless Content</div><div class="blog-meta">May 8, 2025 · 9 min read</div></div>
+        </div>
+
+        <div class="blog-card" onclick="openBlogPost(3)" style="cursor:pointer;background:rgba(0,208,132,.03);">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,208,132,.1),rgba(0,208,132,.02));">💰</div>
+          <div class="blog-body"><div class="blog-cat">Monetization</div><div class="blog-title">5 Ways to Monetize Your Faceless Channel in 2025</div><div class="blog-meta">May 3, 2025 · 7 min read</div></div>
+        </div>
+
+        <div class="blog-card" onclick="openBlogPost(4)" style="cursor:pointer;background:rgba(255,189,0,.03);">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(255,189,0,.1),rgba(255,189,0,.02));">📁</div>
+          <div class="blog-body"><div class="blog-cat">Tutorial</div><div class="blog-title">How to Use Your Own Media Files to Elevate AI Videos</div><div class="blog-meta">Apr 28, 2025 · 5 min read</div></div>
+        </div>
+
+        <div class="blog-card" onclick="openBlogPost(5)" style="cursor:pointer;">
+          <div class="blog-thumb">🎤</div>
+          <div class="blog-body"><div class="blog-cat">Voice AI</div><div class="blog-title">Best AI Voices for Nigerian Content Creators in 2025</div><div class="blog-meta">Apr 22, 2025 · 4 min read</div></div>
+        </div>
+
+        <div class="blog-card" onclick="openBlogPost(6)" style="cursor:pointer;background:rgba(0,170,255,.03);">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,170,255,.12),rgba(0,170,255,.02));">📊</div>
+          <div class="blog-body"><div class="blog-cat">Analytics</div><div class="blog-title">The Metrics That Actually Matter for Short-Form Video</div><div class="blog-meta">Apr 15, 2025 · 8 min read</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG POST MODAL -->
+<div id="blog-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;overflow-y:auto;padding:2rem 1rem;" onclick="if(event.target===this)closeBlogPost()">
+  <div style="max-width:680px;margin:0 auto;background:var(--card);border:.5px solid var(--border);border-radius:8px;padding:2.5rem;position:relative;">
+    <button onclick="closeBlogPost()" style="position:absolute;top:1rem;right:1rem;background:rgba(244,241,235,.08);border:.5px solid rgba(244,241,235,.15);color:var(--white);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;">✕</button>
+    <div id="blog-modal-cat" style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;"></div>
+    <h2 id="blog-modal-title" class="h2" style="margin-bottom:.5rem;font-size:1.6rem;line-height:1.2;"></h2>
+    <div id="blog-modal-meta" style="font-size:.78rem;color:var(--muted);margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:.5px solid var(--border);"></div>
+    <div id="blog-modal-body" style="font-size:.9rem;color:rgba(244,241,235,.8);line-height:1.85;"></div>
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:.5px solid var(--border);text-align:center;">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem;">Ready to put this into practice?</p>
+      <button class="btn btn-primary" onclick="closeBlogPost();openAuthModal('register')">🚀 Start Creating Free →</button>
+    </div>
+  </div>
 </div>
 
 <!-- ===== ABOUT PAGE ===== -->
@@ -2028,7 +2207,7 @@ function initGPay(amt){
 }
 
 // ========== MISC ==========
-function toggleChip(el){el.classList.toggle('sel');}
+function toggleChip(el) { el.classList.toggle('sel'); }
 document.querySelectorAll('.feat-item').forEach(item=>{item.addEventListener('click',()=>{document.querySelectorAll('.feat-item').forEach(i=>i.classList.remove('active'));item.classList.add('active');});});
 function switchUploadTab(btn,tab){document.querySelectorAll('.tabs .tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');}
 function notify(msg){
@@ -2040,19 +2219,16 @@ function notify(msg){
 
 // ========== GENERATE VIDEO (REAL — all models) ==========
 async function generateVideo() {
-  const promptEl   = document.querySelector('#dash-create textarea');
-  const prompt     = promptEl?.value?.trim();
+  const promptEl = document.querySelector('#dash-create textarea');
+  const prompt   = promptEl?.value?.trim();
   if (!prompt) { notify('Please enter a video topic or script!'); return; }
   if (!authToken) { notify('Please log in first!'); openAuthModal('login'); return; }
 
-  const videoModel = document.getElementById('model-select')?.value || 'kling-3.0-pro';
-  const voice      = document.querySelector('#dash-create select[id="voice-select"]')?.value || document.querySelector('#dash-create select')?.value || 'aisha';
-  const format     = document.querySelector('input[name="format"]:checked')?.value || '9:16';
-  const quality    = document.querySelector('input[name="quality"]:checked')?.value || '1080p';
-  const theme      = document.querySelector('#dash-create select[id="theme-select"]')?.value || 'default';
-  const language   = document.querySelector('#dash-create select[id="lang-select"]')?.value  || 'en';
-  const platforms  = Array.from(document.querySelectorAll('.chip.sel')).map(c => c.dataset.platform).filter(Boolean);
-  const scheduledFor = document.querySelector('#dash-create input[type="datetime-local"]')?.value || null;
+  const videoModel   = document.getElementById('model-select')?.value   || 'kling-3.0-pro';
+  const voice        = document.getElementById('voice-select')?.value    || 'aisha';
+  const format       = document.getElementById('format-select')?.value   || '9:16';
+  const quality      = document.getElementById('quality-select')?.value  || '1080p';
+  const platforms    = Array.from(document.querySelectorAll('.platform-chip.sel')).map(c => c.dataset.platform).filter(Boolean);
 
   // Update pipeline UI
   const steps = [2,3,4,5];
@@ -2064,7 +2240,11 @@ async function generateVideo() {
   const modelInfo = MODEL_INFO[videoModel] || MODEL_INFO['kling-3.0-pro'];
   notify(`🎬 Starting generation with ${modelInfo.label}...`);
 
-  // Animate pipeline steps optimistically
+  // Disable button while generating
+  const btn = document.getElementById('generate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Generating...'; }
+
+  // Animate pipeline steps
   let stepIdx = 0;
   const stepInterval = setInterval(() => {
     if (stepIdx < steps.length) {
@@ -2076,15 +2256,13 @@ async function generateVideo() {
 
   try {
     const data = await apiCall('/videos/generate', 'POST', {
-      prompt, voice, videoModel, format, quality, theme, language,
+      prompt, voice, videoModel, format, quality,
       platforms: platforms.length ? platforms : ['tiktok'],
-      scheduledFor: scheduledFor || undefined,
     });
 
     if (data.success) {
       notify(`✅ Video queued! ${modelInfo.label} is generating — check My Videos shortly.`);
       promptEl.value = '';
-      // Poll for completion every 15s for up to 10 minutes
       pollVideoStatus(data.videoId);
     } else {
       clearInterval(stepInterval);
@@ -2097,6 +2275,11 @@ async function generateVideo() {
   } catch (e) {
     clearInterval(stepInterval);
     notify('❌ Connection error. Please try again.');
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = `✨ Generate Video with ${modelInfo.label}`;
+    }
   }
 }
 
@@ -2283,6 +2466,119 @@ async function generateScriptNBP(topic, platform) {
   } else {
     notify('❌ ' + data.message);
   }
+}
+
+// ========== BLOG POST MODAL ==========
+const BLOG_POSTS = {
+  1: {
+    cat: 'AI Video',
+    title: 'How Kling 3.0 Changed Everything About AI Video',
+    meta: 'May 12, 2025 · 6 min read',
+    body: `Kling 3.0 is the world's first unified multimodal AI video engine — and it changes everything. For the first time, a single model can generate native 4K video, synchronized audio, and multi-shot cinematography all in one pass.
+
+In this article we break down what makes Kling 3.0 so different, why it's rated #1 globally, and how monocomplex.ai uses it to help creators produce cinema-grade content automatically.
+
+Key breakthroughs:
+
+Native 4K output with zero upscaling. 6-shot multi-scene videos from a single prompt. 7-language lip sync that actually works. AI Director mode that picks the best angles automatically. Physics-accurate motion including realistic water, fire and fabric.
+
+If you're serious about faceless content creation, Kling 3.0 is the model you need.`
+  },
+  2: {
+    cat: 'Growth',
+    title: 'How to Hit 100K Followers in 90 Days with Faceless Content',
+    meta: 'May 8, 2025 · 9 min read',
+    body: `100K followers in 90 days sounds impossible — but it's happening for creators using AI-powered faceless content. The formula is simple: consistency + quality + the right niche.
+
+Step 1 — Pick a high-CPM niche. Finance, crypto, motivation, and tech consistently outperform lifestyle and fashion for faceless channels.
+
+Step 2 — Post twice daily. With monocomplex.ai you can auto-generate and schedule 2 videos per day in under 10 minutes.
+
+Step 3 — Hook in the first 2 seconds. Your first frame and first sentence determine if people watch or scroll.
+
+Step 4 — Use trending audio. Our platform auto-matches trending sounds to your videos.
+
+Step 5 — Engage in the first hour. Reply to every comment in the first 60 minutes after posting.
+
+Follow this system and 100K is achievable within 3 months.`
+  },
+  3: {
+    cat: 'Monetization',
+    title: '5 Ways to Monetize Your Faceless Channel in 2025',
+    meta: 'May 3, 2025 · 7 min read',
+    body: `Building a faceless channel is only half the job — here are 5 proven ways to turn views into real income in 2025.
+
+1. TikTok Creator Fund. Nigeria and Africa are now eligible for TikTok monetization. With 100K+ followers you can earn directly from views.
+
+2. YouTube Ad Revenue. Long-form Shorts compilations (10+ minutes) earn the highest CPM on YouTube.
+
+3. Affiliate Marketing. Drop affiliate links in your bio and descriptions. Finance, tech, and software niches pay $50–$500 per conversion.
+
+4. Digital Products. Sell Notion templates, e-books, or courses through your bio link. Faceless finance channels regularly make $10K/month from digital products alone.
+
+5. Brand Deals. Once you hit 50K+ followers, brands will pay ₦200K–₦1M per sponsored video. monocomplex.ai's Brand Kit feature makes your content sponsorship-ready from day one.`
+  },
+  4: {
+    cat: 'Tutorial',
+    title: 'How to Use Your Own Media Files to Elevate AI Videos',
+    meta: 'Apr 28, 2025 · 5 min read',
+    body: `monocomplex.ai lets you upload your own images, videos, audio files, and PDFs to use inside your AI video generations. Here's how to get the most out of it.
+
+Uploading your own footage: Go to Dashboard → Upload Files and drag in any MP4, MOV, PNG, JPG or PDF. These get stored on your Cloudinary account and become available to attach to any video generation.
+
+Using your own voice: Record yourself talking for 1–3 minutes, upload to Voice Clone, and our AI powered by ElevenLabs will clone your voice in minutes. All future videos will use your voice automatically.
+
+Using your brand assets: Upload your logo to Brand Kit and it will appear as a watermark on every video. Add your brand colors and intro/outro text for a fully branded output every time.`
+  },
+  5: {
+    cat: 'Voice AI',
+    title: 'Best AI Voices for Nigerian Content Creators in 2025',
+    meta: 'Apr 22, 2025 · 4 min read',
+    body: `ElevenLabs powers monocomplex.ai's voice system — and the results are shockingly natural. Here are the best voices for Nigerian content creators.
+
+Aisha (Nigerian Female) — warm, authoritative, perfect for finance and lifestyle content.
+
+Marcus (Deep American Male) — high trust, ideal for motivation and business content.
+
+Zara (American Female) — energetic and engaging, great for trending topics.
+
+James (British Male) — premium feel, excellent for tech and educational content.
+
+Pro tip: Use Voice Clone to record your own voice and clone it. Your audience will think you're narrating every video personally — even though the AI generates everything automatically. Cloned voices consistently outperform standard AI voices by 40% in watch time.`
+  },
+  6: {
+    cat: 'Analytics',
+    title: 'The Metrics That Actually Matter for Short-Form Video',
+    meta: 'Apr 15, 2025 · 8 min read',
+    body: `Most creators obsess over views and followers — but these are vanity metrics. Here are the numbers that actually predict channel growth and income.
+
+1. Watch Time % — If less than 60% of viewers watch to the end, your hook or pacing is weak. Target 70%+.
+
+2. Shares per View — Shares beat likes and comments for algorithm ranking. One share equals 10x the algorithmic weight of a like.
+
+3. Profile Visit Rate — How many viewers click your profile after watching? This predicts follower conversion.
+
+4. Save Rate — Saved videos get pushed to new audiences by the algorithm repeatedly.
+
+5. Comment Rate — Comments signal active community and boost reach organically.
+
+monocomplex.ai's Analytics dashboard tracks all these metrics across TikTok, YouTube and Instagram in one place — so you know exactly what's working.`
+  }
+};
+
+function openBlogPost(id) {
+  const post = BLOG_POSTS[id];
+  if (!post) return;
+  document.getElementById('blog-modal-cat').textContent   = post.cat;
+  document.getElementById('blog-modal-title').textContent = post.title;
+  document.getElementById('blog-modal-meta').textContent  = post.meta;
+  document.getElementById('blog-modal-body').textContent  = post.body;
+  document.getElementById('blog-modal-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeBlogPost() {
+  document.getElementById('blog-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
 }
 
 // ========== UPLOAD FILES ==========
