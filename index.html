@@ -2606,6 +2606,40 @@ async function uploadFilesToServer(files) {
 
 // ── AUTH MODAL ────────────────────────────────────────────────
 let authMode = 'login';
+// ── BACKEND API CONNECTION ────────────────────────────────────
+const API = 'https://arnold-mono.vercel.app/api';
+
+// ── AUTH STATE ────────────────────────────────────────────────
+let authToken = null;
+let currentUser = null;
+try {
+  authToken = localStorage.getItem('mc_token') || null;
+  const savedUser = localStorage.getItem('mc_user');
+  currentUser = savedUser ? JSON.parse(savedUser) : null;
+} catch(e) { authToken = null; currentUser = null; }
+
+// ── API CALL ──────────────────────────────────────────────────
+async function apiCall(endpoint, method = 'GET', body = null) {
+  const token = authToken || localStorage.getItem('mc_token');
+  const headers = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  const opts = { method, headers };
+  if (body) opts.body = JSON.stringify(body);
+  try {
+    const res = await fetch(`${API}${endpoint}`, opts);
+    const data = await res.json();
+    if (res.status === 401) {
+      authToken = null; currentUser = null;
+      localStorage.removeItem('mc_token');
+      localStorage.removeItem('mc_user');
+    }
+    return data;
+  } catch(err) {
+    console.error('API error:', err);
+    return { success: false, message: 'Connection error. Please try again.' };
+  }
+}
+
 function openAuthModal(mode) {
   authMode = mode || 'login';
   const modal = document.getElementById('auth-modal');
@@ -2633,43 +2667,23 @@ function toggleAuthMode() {
   openAuthModal(authMode === 'login' ? 'register' : 'login');
 }
 async function submitAuth() {
-  const email = document.getElementById('auth-email').value;
-  const password = document.getElementById('auth-password').value;
-  const btn = document.getElementById('auth-submit-btn');
+  const email    = document.getElementById('auth-email')?.value?.trim();
+  const password = document.getElementById('auth-password')?.value;
+  const btn      = document.getElementById('auth-submit-btn');
   if (!email || !password) { notify('Please fill in all fields'); return; }
-  btn.textContent = 'Please wait...'; btn.disabled = true;
-  if (authMode === 'register') {
-    const name = document.getElementById('auth-name').value;
-    if (!name) { notify('Please enter your name'); btn.disabled = false; btn.textContent = 'Create Account →'; return; }
-    await registerUser(name, email, password);
-  } else {
-    await loginUser(email, password);
-  }
-  btn.disabled = false;
-  btn.textContent = authMode === 'register' ? 'Create Account →' : 'Login →';
-  document.getElementById('auth-modal').classList.remove('open');
-}
-
-// ── BACKEND API CONNECTION ==========
-
-const API = 'https://arnold-mono.vercel.app/api';
-let authToken = localStorage.getItem('mc_token') || null;
-let currentUser = JSON.parse(localStorage.getItem('mc_user') || 'null');
-
-// Helper — make API calls
-async function apiCall(endpoint, method = 'GET', body = null) {
-  const headers = { 'Content-Type': 'application/json' };
-  if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
-  const opts = { method, headers };
-  if (body) opts.body = JSON.stringify(body);
+  if (btn) { btn.textContent = 'Please wait...'; btn.disabled = true; }
   try {
-    const res = await fetch(`${API}${endpoint}`, opts);
-    const data = await res.json();
-    return data;
-  } catch(err) {
-    console.error('API error:', err);
-    return { success: false, message: 'Connection error. Please try again.' };
+    if (authMode === 'register') {
+      const name = document.getElementById('auth-name')?.value?.trim();
+      if (!name) { notify('Please enter your name'); if(btn){btn.disabled=false;btn.textContent='Create Account →';} return; }
+      await registerUser(name, email, password);
+    } else {
+      await loginUser(email, password);
+    }
+  } catch(e) {
+    notify('❌ Error: ' + e.message);
   }
+  if (btn) { btn.disabled = false; btn.textContent = authMode === 'register' ? 'Create Account →' : 'Login →'; }
 }
 
 // ── REGISTER ──────────────────────────────────────────────────
